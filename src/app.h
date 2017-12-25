@@ -34,6 +34,8 @@ public:
 
 		// glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, info.majorVersion);
 		// glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, info.minorVersion);
+		// glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		// glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 #ifndef _DEBUG
         if (info.flags.debug)
@@ -45,8 +47,6 @@ public:
         {
 			glfwWindowHint(GLFW_CONTEXT_ROBUSTNESS, GLFW_LOSE_CONTEXT_ON_RESET);
         }
-		// glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-		// glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 		glfwWindowHint(GLFW_SAMPLES, info.samples);
 		glfwWindowHint(GLFW_STEREO, info.flags.stereo ? GL_TRUE : GL_FALSE);
 		// Open a window and create its OpenGL context
