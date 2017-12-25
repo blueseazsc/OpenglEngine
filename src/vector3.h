@@ -1,6 +1,8 @@
 #ifndef VECTOR3_H
 #define VECTOR3_H
 
+#include "header.h"
+
 namespace framework {
 class Vector3f {
 public:
@@ -19,14 +21,12 @@ public:
 	void clear() { x = y = z = 0.f; }
 
 	float magnitude() const { return sqrt(x*x + y*y + z*z); }
-	float normalize() {
-		float len = Magnitude();
-		float f = 1.0f / mod;
+	void normalize() {
+		float len = magnitude();
+		float f = 1.0f / len;
 		x = x * f;
 		y = y * f;
 		z = z * f;
-
-		return mod;
 	}
 public:
 	float x, y, z;

@@ -1,6 +1,7 @@
 #include "util.h"
+#include <SOIL.h>
 
-using namespace framework;
+namespace framework {
 
 GLuint CreateTextureFromImage(const char *imgFilePath, bool invertY) 
 {
@@ -10,3 +11,6 @@ GLuint CreateTextureFromImage(const char *imgFilePath, bool invertY)
 
 	return SOIL_load_OGL_texture(imgFilePath, 0, 0, flags);
 }
+
+}
+

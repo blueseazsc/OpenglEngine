@@ -15,8 +15,8 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++11")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-
 find_package(OpenGL REQUIRED)
+find_package(GLUT REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(GLM REQUIRED)
 
@@ -31,6 +31,15 @@ message(STATUS "opengl cflag 				= ${OPENGL_CFLAGS}")
 message(STATUS "opengl cflag other 			= ${OPENGL_CFLAGS_OTHER}")
 message(STATUS "opengl library 				= ${OPENGL_LIBRARY}")
 message(STATUS "opengl libraries 			= ${OPENGL_LIBRARIES}")
+
+message(STATUS "glut include dir 			= ${GLUT_INCLUDE_DIR}")
+message(STATUS "glut include dirs 			= ${GLUT_INCLUDE_DIRS}")
+message(STATUS "glut ldflag 				= ${GLUT_LDFLAGS}")
+message(STATUS "glut ldflag other 			= ${GLUT_LDFLAGS_OTHER}")
+message(STATUS "glut cflag 					= ${GLUT_CFLAGS}")
+message(STATUS "glut cflag other 			= ${GLUT_CFLAGS_OTHER}")
+message(STATUS "glut library 				= ${GLUT_LIBRARY}")
+message(STATUS "glut libraries 				= ${GLUT_LIBRARIES}")
 
 message(STATUS "glfw include dir 		= ${GLFW_INCLUDE_DIR}")
 message(STATUS "glfw include dirs 		= ${GLFW_INCLUDE_DIRS}")
@@ -58,5 +67,8 @@ message(STATUS "glm cflag 			= ${GLM_CFLAGS}")
 message(STATUS "glm cflag other 		= ${GLM_CFLAGS_OTHER}")
 message(STATUS "glm library 			= ${GLM_LIBRARY}")
 message(STATUS "glm libraries 		= ${GLM_LIBRARIES}")
+
+set(SOIL_INCLUDE_DIRS "/usr/local/include")
+set(SOIL_LIBRARIES "/usr/local/lib/libSOIL.a")
 
 add_subdirectory(src)
