@@ -32,22 +32,22 @@ public:
 
         init();
 
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, info.majorVersion);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, info.minorVersion);
+		// glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, info.majorVersion);
+		// glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, info.minorVersion);
 
 #ifndef _DEBUG
         if (info.flags.debug)
 #endif /* _DEBUG */
         {
-            glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
+			glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
         }
         if (info.flags.robust)
         {
-            glfwWindowHint(GLFW_CONTEXT_ROBUSTNESS, GLFW_LOSE_CONTEXT_ON_RESET);
+			glfwWindowHint(GLFW_CONTEXT_ROBUSTNESS, GLFW_LOSE_CONTEXT_ON_RESET);
         }
-        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-        glfwWindowHint(GLFW_SAMPLES, info.samples);
+		// glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		// glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+		glfwWindowHint(GLFW_SAMPLES, info.samples);
 		glfwWindowHint(GLFW_STEREO, info.flags.stereo ? GL_TRUE : GL_FALSE);
 		// Open a window and create its OpenGL context
 		window = glfwCreateWindow(info.windowWidth, info.windowHeight, info.title, info.flags.fullscreen ? glfwGetPrimaryMonitor() : NULL, NULL);
@@ -106,13 +106,13 @@ public:
 
     virtual void init()
     {
-        strcpy(info.title, "OpenGL SuperBible Example");
+        strcpy(info.title, "OpenGL Engine");
 
         info.windowWidth = 800;
         info.windowHeight = 600;
 
         info.majorVersion = 3;
-        info.minorVersion = 2;
+        info.minorVersion = 3;
 
         info.samples = 4;
         info.flags.all = 0;
