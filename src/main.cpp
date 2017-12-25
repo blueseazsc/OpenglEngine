@@ -31,14 +31,17 @@ public:
 		// draw axis
 		glLineWidth(10.f);	
 		glBegin(GL_LINES);
-		glColor4ub(255, 0, 0, 255); glVertex3f(0.f, 0.f, -2.5f);
-		glColor4ub(255, 0, 0, 255); glVertex3f(0.5f, 0.f, -2.5f);
+		glColor4ub(255, 0, 0, 255); 
+		glVertex3f(0.f, 0.f, -2.5f);
+		glVertex3f(0.5f, 0.f, -2.5f);
 
-		glColor4ub(0, 255, 0, 255); glVertex3f(0.f, 0.f, -2.5f);
-		glColor4ub(0, 255, 0, 255); glVertex3f(0.f, 0.5f, -2.5f);
+		glColor4ub(0, 255, 0, 255); 
+		glVertex3f(0.f, 0.f, -2.5f);
+		glVertex3f(0.f, 0.5f, -2.5f);
 
-		glColor4ub(0, 0, 255, 255); glVertex3f(0.f, 0.f, -2.5f);
-		glColor4ub(0, 0, 255, 255); glVertex3f(0.f, 0.f, -3.f);
+		glColor4ub(0, 0, 255, 255); 
+		glVertex3f(0.f, 0.f, -2.5f);
+		glVertex3f(0.f, 0.f, -3.f);
 		glEnd();
 	}
 private:
