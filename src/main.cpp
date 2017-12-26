@@ -6,6 +6,7 @@
 #include "ground.h"
 #include "light.h"
 #include "camera.h"
+#include "sprite.h"
 
 using namespace framework;
 class Test:	public Application
@@ -57,6 +58,9 @@ public:
 
 		camera.mViewportWidth = info.windowWidth;
 		camera.mViewportHeight = info.windowHeight;
+
+		sprite.SetImage("/Users/zhangsc/Downloads/final/MyApp/Res/head.png");
+		sprite.SetRect(0.0f, 0.0f, 100.0f, 100.0f);
 	}
 	virtual void render(double currentTime)
 	{
@@ -81,6 +85,7 @@ public:
 		model.Draw();
 
 		camera.SwitchTo2D();
+		sprite.Draw();
 	}
     virtual void onKey(int key, int action)
     {
@@ -147,6 +152,7 @@ private:
 	SkyBox skyBox;
 	Model model;
 	Ground ground;
+	Sprite2D sprite;
 
 	DirectionLight light;
 	PointLight light1;
