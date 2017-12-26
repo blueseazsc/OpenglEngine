@@ -13,7 +13,10 @@
 #include <string.h>
 #include <string>
 #include <sstream>
+#include <fstream>
 #include <vector>
 #include <functional>
+#include <memory>
+#include <vector>
 
 #endif
