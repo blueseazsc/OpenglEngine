@@ -3,10 +3,10 @@
 using namespace framework;
 
 void Ground::Draw() {
-	// glEnable(GL_LIGHTING);
-	// glMaterialfv(GL_FRONT, GL_AMBIENT, mAmbientMaterial);
-	// glMaterialfv(GL_FRONT, GL_DIFFUSE, mDiffuseMaterial);
-	// glMaterialfv(GL_FRONT, GL_SPECULAR, mSpecularMaterial);
+	glEnable(GL_LIGHTING);
+	glMaterialfv(GL_FRONT, GL_AMBIENT, mAmbientMaterial);
+	glMaterialfv(GL_FRONT, GL_DIFFUSE, mDiffuseMaterial);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, mSpecularMaterial);
 
 	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_DEPTH_TEST);
