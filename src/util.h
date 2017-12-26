@@ -13,5 +13,7 @@ GLuint CreateTexture2DFromBMP(const char *bmpPath);
 GLuint CreateTextureFromImage(const char *imgFilePath, bool invertY = true);
 GLuint CreateDisplayList(std::function<void()> func);
 
+GLuint CreateProcedureTexture(int size);
+
 }
 #endif

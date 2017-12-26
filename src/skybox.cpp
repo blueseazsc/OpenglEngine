@@ -27,8 +27,6 @@ void SkyBox::Init(const char *imageDir)
 }
 void SkyBox::DrawCommand()
 {
-	glDisable(GL_LIGHTING);
-	glDisable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
 
 	glBindTexture(GL_TEXTURE_2D, mTextures[0]);
@@ -103,6 +101,9 @@ void SkyBox::DrawCommand()
 	glTexCoord2f(0.0f, 1.0f);
 	glVertex3f(-0.5f, -0.5f, -0.5f);
 	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
 }
 void SkyBox::Draw(float x, float y, float z)
 {

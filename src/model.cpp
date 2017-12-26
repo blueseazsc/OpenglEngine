@@ -125,6 +125,11 @@ void Model::Draw() {
 	}
 	glEnd();
 	glPopMatrix();
+
+	glDisable(GL_DEPTH_TEST);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_LIGHTING);
 }
 void Model::SetAmbientMaterial(float r, float g, float b, float a) {
 	mAmbientMaterial[0] = r;

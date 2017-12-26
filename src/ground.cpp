@@ -8,9 +8,8 @@ void Ground::Draw() {
 	glMaterialfv(GL_FRONT, GL_DIFFUSE, mDiffuseMaterial);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mSpecularMaterial);
 
-	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_DEPTH_TEST);
-	glDisable(GL_TEXTURE_2D);
+	glEnable(GL_COLOR_MATERIAL);
 
 	glBegin(GL_QUADS);
 	glNormal3f(0.0f, 1.0f, 0.0f);
@@ -30,6 +29,10 @@ void Ground::Draw() {
 		}
 	}
 	glEnd();
+
+	glDisable(GL_COLOR_MATERIAL);
+	glDisable(GL_DEPTH_TEST);
+	glDisable(GL_LIGHTING);
 }
 void Ground::SetAmbientMaterial(float r, float g, float b, float a) {
 	mAmbientMaterial[0] = r;

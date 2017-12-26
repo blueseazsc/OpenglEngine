@@ -21,7 +21,6 @@ void Sprite2D::Draw() {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, mTexture);
-	glDisable(GL_LIGHTING);
 	glColor4ub(255, 255, 255, 255);
 	glBegin(GL_QUADS);
 	glTexCoord2f(0.0f, 0.0f);
@@ -33,5 +32,7 @@ void Sprite2D::Draw() {
 	glTexCoord2f(0.0f, 1.0f);
 	glVertex3f(mVertexes[3].x, mVertexes[3].y, mVertexes[3].z);
 	glEnd();
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
 	glDisable(GL_BLEND);
 }

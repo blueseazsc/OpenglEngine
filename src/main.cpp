@@ -7,11 +7,15 @@
 #include "light.h"
 #include "camera.h"
 #include "sprite.h"
+#include "particle.h"
 
 using namespace framework;
 class Test:	public Application
 {
 public:
+	enum {
+		PARTICLE_COUNT = 1000,
+	};
 	Test() : light(GL_LIGHT0), light1(GL_LIGHT1), light2(GL_LIGHT2), light3(GL_LIGHT3) {}
 	virtual void startup(double currentTime)
 	{
@@ -61,15 +65,38 @@ public:
 
 		sprite.SetImage("/Users/zhangsc/Downloads/final/MyApp/Res/head.png");
 		sprite.SetRect(0.0f, 0.0f, 100.0f, 100.0f);
+
+		particleTexture = CreateProcedureTexture(128);
+	}
+	void EmitParticle(float delta) {
+		static float currentSleepTime = 0.0f;
+		static float nextParticleTime = 0.016f;
+		static int particleCount = 1;
+		if (particleCount == PARTICLE_COUNT) {
+			return;
+		}
+		currentSleepTime += delta;
+		if (currentSleepTime >= nextParticleTime) {
+			currentSleepTime = 0.0f;
+		}
+		else {
+			return;
+		}
+		particle[particleCount - 1].mHalfSize = 16.0f;
+		particle[particleCount - 1].mTexture = particleTexture;
+		particle[particleCount - 1].Init(220, 150, 50, 255, 10.0f);
+		++particleCount;
 	}
 	virtual void render(double currentTime)
 	{
+		double frameTime = currentTime - lastTime;
+		lastTime = currentTime;
+
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		camera.SwitchTo3D();
-		camera.Update(currentTime - lastTime);
-		lastTime = currentTime;
+		camera.Update(frameTime);
 
 		skyBox.Draw(camera.mPos.x, camera.mPos.y, camera.mPos.z);
 
@@ -86,6 +113,16 @@ public:
 
 		camera.SwitchTo2D();
 		sprite.Draw();
+
+		EmitParticle(frameTime);
+		for(int i = 0; i < PARTICLE_COUNT; ++i) {
+			if (particle[i].mLifeTime != -1.0f) {
+				particle[i].Update(frameTime);
+				particle[i].Draw();
+			} else {
+				break;
+			}
+		}
 	}
     virtual void onKey(int key, int action)
     {
@@ -153,6 +190,9 @@ private:
 	Model model;
 	Ground ground;
 	Sprite2D sprite;
+
+	GLuint particleTexture;
+	Particle particle[PARTICLE_COUNT];
 
 	DirectionLight light;
 	PointLight light1;
