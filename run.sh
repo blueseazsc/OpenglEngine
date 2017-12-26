@@ -7,4 +7,4 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 rm bin/main
 # make
 make VERBOSE=1
-# bin/main
+bin/main

@@ -21,13 +21,14 @@ public:
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
 
+		skyBox.Init("/Users/zhangsc/Downloads/final/MyApp/Res/");
+
 		model.Init("/Users/zhangsc/Downloads/final/MyApp/Res/Sphere.obj");
 		model.mTexture = CreateTexture2DFromBMP("/Users/zhangsc/Downloads/final/MyApp/Res/earth.bmp");
 		model.SetAmbientMaterial(0.1f, 0.1f, 0.1f, 1.0f);
 		model.SetDiffuseMaterial(0.4f, 0.4f, 0.4f, 1.0f);
 		model.SetSpecularMaterial(1.0f, 1.0f, 1.0f, 1.0f);
 
-		skyBox.Init("/Users/zhangsc/Downloads/final/MyApp/Res/");
 	}
 	virtual void render(double currentTime)
 	{

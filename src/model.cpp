@@ -40,7 +40,7 @@ void Model::Init(const char*modelPath) {
 					ssOneLine >> floatData.v[0];
 					ssOneLine >> floatData.v[1];
 					texcoords.push_back(floatData);
-					printf("texcoord : %f,%f\n", floatData.v[0], floatData.v[1]);
+					// printf("texcoord : %f,%f\n", floatData.v[0], floatData.v[1]);
 				} else if (szOneLine[1] == 'n') {
 					ssOneLine >> temp;
 					FloatData floatData;
@@ -48,7 +48,7 @@ void Model::Init(const char*modelPath) {
 					ssOneLine >> floatData.v[1];
 					ssOneLine >> floatData.v[2];
 					normals.push_back(floatData);
-					printf("normal : %f,%f,%f\n", floatData.v[0], floatData.v[1], floatData.v[2]);
+					// printf("normal : %f,%f,%f\n", floatData.v[0], floatData.v[1], floatData.v[2]);
 				} else {
 					ssOneLine >> temp;
 					FloatData floatData;
@@ -56,7 +56,7 @@ void Model::Init(const char*modelPath) {
 					ssOneLine >> floatData.v[1];
 					ssOneLine >> floatData.v[2];
 					positions.push_back(floatData);
-					printf("position : %f,%f,%f\n", floatData.v[0], floatData.v[1], floatData.v[2]);
+					// printf("position : %f,%f,%f\n", floatData.v[0], floatData.v[1], floatData.v[2]);
 				}
 			}else if (szOneLine[0] == 'f'){
 				std::stringstream ssOneLine(szOneLine);
@@ -106,10 +106,10 @@ void Model::Init(const char*modelPath) {
 	}
 }
 void Model::Draw() {
-	glEnable(GL_LIGHTING);
-	glMaterialfv(GL_FRONT, GL_AMBIENT, mAmbientMaterial);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, mDiffuseMaterial);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, mSpecularMaterial);
+	// glEnable(GL_LIGHTING);
+	// glMaterialfv(GL_FRONT, GL_AMBIENT, mAmbientMaterial);
+	// glMaterialfv(GL_FRONT, GL_DIFFUSE, mDiffuseMaterial);
+	// glMaterialfv(GL_FRONT, GL_SPECULAR, mSpecularMaterial);
 
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, mTexture);
