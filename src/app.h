@@ -85,7 +85,7 @@ public:
         fprintf(stderr, "RENDERER: %s\n", (char *)glGetString(GL_RENDERER));
 #endif
 
-        startup();
+        startup(glfwGetTime());
 
         do
         {
@@ -122,7 +122,7 @@ public:
 #endif
     }
 
-    virtual void startup()
+    virtual void startup(double currentTime)
     {
 
     }

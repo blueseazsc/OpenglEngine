@@ -39,7 +39,7 @@ Vector3f operator + (const Vector3f& vec1, const Vector3f& vec2);
 Vector3f operator - (const Vector3f& vec1, const Vector3f& vec2);
 
 Vector3f operator * (const Vector3f& vec, float f);
-Vector3f operator * (const Vector3f& vec1, const Vector3f& vec2);
+float operator * (const Vector3f& vec1, const Vector3f& vec2);
 
 Vector3f operator / (const Vector3f& vec, float f);
 
