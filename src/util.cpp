@@ -12,5 +12,14 @@ GLuint CreateTextureFromImage(const char *imgFilePath, bool invertY)
 	return SOIL_load_OGL_texture(imgFilePath, 0, 0, flags);
 }
 
+GLuint CreateDisplayList(std::function<void()> func)
+{
+	GLuint displayList = glGenLists(1);
+	glNewList(displayList, GL_COMPILE);
+	func();
+	glEndList();
+	return displayList;
+}
+
 }
 

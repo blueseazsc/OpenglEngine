@@ -1,6 +1,7 @@
 #include "app.h"
 #include "header.h"
 #include "util.h"
+#include "skybox.h"
 
 using namespace framework;
 class Test:	public Application
@@ -20,12 +21,15 @@ public:
 		glLoadIdentity();
 
 		texture = CreateTextureFromImage("/Users/zhangsc/Downloads/final/MyApp/Res/head.png", true);
+
+		skyBox.Init("/Users/zhangsc/Downloads/final/MyApp/Res/");
 	}
 	virtual void render(double currentTime)
 	{
-		glClearColor(0.2f, 0.4f, 0.6f, 1.f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0.f, 0.f, 0.f, 1.f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		skyBox.Draw(0.f,0.f,0.f);
 		// draw triangle
 		glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, texture);
@@ -66,6 +70,7 @@ public:
 	}
 private:
 	GLuint texture;
+	SkyBox skyBox;
 };
 
 DECLARE_MAIN(Test);
