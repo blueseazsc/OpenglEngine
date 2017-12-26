@@ -15,7 +15,7 @@ public:
 	void Draw(float x, float y, float z);
 
 protected:
-	GLuint mTexture[SKY_BOX_TEXTURE_COUNT];
+	GLuint mTextures[SKY_BOX_TEXTURE_COUNT];
 	GLuint mFastDrawCall;
 };
 }
