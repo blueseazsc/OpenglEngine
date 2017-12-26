@@ -21,7 +21,7 @@ void SkyBox::Init(const char *imageDir)
 		memset(path, 0, 256);
 		strcpy(path, imageDir);
 		strcat(path, filename[i]);
-		mTexture[i] = CreateTextureFromImage(path, false);
+		mTexture[i] = CreateTextureFromImage(path, true);
 	}
 	mFastDrawCall = CreateDisplayList([this]() -> void { DrawCommand(); } );
 }
@@ -34,13 +34,13 @@ void SkyBox::DrawCommand()
 	glBegin(GL_QUADS);
 	glColor4ub(255, 255, 255, 255);
 	glTexCoord2f(0.f, 0.f);
-	glVertex3f(-0.5f, -0.5f, 0.5f);
+	glVertex3f(-0.5f, -0.5f, -0.5f);
 	glTexCoord2f(1.f, 0.f);
-	glVertex3f(0.5f, -0.5f, 0.5f);
+	glVertex3f(0.5f, -0.5f, -0.5f);
 	glTexCoord2f(1.f, 1.f);
-	glVertex3f(0.5f, 0.5f, 0.5f);
+	glVertex3f(0.5f, 0.5f, -0.5f);
 	glTexCoord2f(0.f, 1.f);
-	glVertex3f(-0.5f, 0.5f, 0.5f);
+	glVertex3f(-0.5f, 0.5f, -0.5f);
 	glEnd();
 }
 void SkyBox::Draw(float x, float y, float z)
