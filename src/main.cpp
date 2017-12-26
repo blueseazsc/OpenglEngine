@@ -99,12 +99,16 @@ public:
 
 		switch (key) {
 			case GLFW_KEY_A:
+				camera.mbMoveLeft = value;
 				break;
 			case GLFW_KEY_D:
+				camera.mbMoveRight = value;
 				break;
 			case GLFW_KEY_W:
+				camera.mbMoveForward = value;
 				break;
 			case GLFW_KEY_S:
+				camera.mbMoveBack = value;
 				break;
 			default:
 				break;
