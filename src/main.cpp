@@ -67,12 +67,12 @@ public:
 
 		skyBox.Draw(0.f,0.f,0.f);
 
-		light.Enable();
-		// light1.Enable();
+		// light.Enable();
+		light1.Enable();
 		// light1.Update(camera.mPos.x, camera.mPos.y, camera.mPos.z);
-		// light2.Enable();
+		light2.Enable();
 		// light2.Update(camera.mPos.x, camera.mPos.y, camera.mPos.z);
-		// light3.Enable();
+		light3.Enable();
 		// light3.Update(camera.mPos.x, camera.mPos.y, camera.mPos.z);
 
 		ground.Draw();
