@@ -21,6 +21,9 @@ void Light::Enable() {
 	glEnable(GL_LIGHTING);
 	glEnable(mLightIdentifier);
 }
+void Light::Disable() {
+	glDisable(GL_LIGHTING);
+}
 //////// DirectionLight
 DirectionLight::DirectionLight(GLenum light) {
 	mLightIdentifier = light;

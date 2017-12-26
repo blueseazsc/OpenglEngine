@@ -3,7 +3,6 @@
 using namespace framework;
 
 void Ground::Draw() {
-	glEnable(GL_LIGHTING);
 	glMaterialfv(GL_FRONT, GL_AMBIENT, mAmbientMaterial);
 	glMaterialfv(GL_FRONT, GL_DIFFUSE, mDiffuseMaterial);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mSpecularMaterial);
@@ -32,7 +31,6 @@ void Ground::Draw() {
 
 	glDisable(GL_COLOR_MATERIAL);
 	glDisable(GL_DEPTH_TEST);
-	glDisable(GL_LIGHTING);
 }
 void Ground::SetAmbientMaterial(float r, float g, float b, float a) {
 	mAmbientMaterial[0] = r;

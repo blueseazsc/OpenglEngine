@@ -110,6 +110,7 @@ public:
 
 		ground.Draw();
 		model.Draw();
+		Light::Disable();
 
 		camera.SwitchTo2D();
 		sprite.Draw();

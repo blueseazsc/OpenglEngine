@@ -11,6 +11,7 @@ public:
 	void SetDiffuseColor(float r, float g, float b, float a);
 	void SetSpecularColor(float r, float g, float b, float a);
 	void Enable();
+	static void Disable();
 protected:
 	GLenum mLightIdentifier;
 	Light();
