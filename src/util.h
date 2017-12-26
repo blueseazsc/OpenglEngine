@@ -10,7 +10,7 @@ unsigned char* DecodeBMP(unsigned char*bmpFileData, int&width, int&height);
 GLuint CreateTexture2D(unsigned char*pixelData, int width, int height, GLenum type);
 GLuint CreateTexture2DFromBMP(const char *bmpPath);
 
-GLuint CreateTextureFromImage(const char *imgFilePath, bool invertY);
+GLuint CreateTextureFromImage(const char *imgFilePath, bool invertY = true);
 GLuint CreateDisplayList(std::function<void()> func);
 
 }
