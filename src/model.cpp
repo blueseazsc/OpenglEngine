@@ -110,6 +110,7 @@ void Model::Draw() {
 	glMaterialfv(GL_FRONT, GL_DIFFUSE, mDiffuseMaterial);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, mSpecularMaterial);
 
+	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, mTexture);
 	glEnable(GL_DEPTH_TEST);
@@ -128,6 +129,7 @@ void Model::Draw() {
 	glDisable(GL_DEPTH_TEST);
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_COLOR_MATERIAL);
 }
 void Model::SetAmbientMaterial(float r, float g, float b, float a) {
 	mAmbientMaterial[0] = r;

@@ -29,7 +29,7 @@ void Ground::Draw() {
 	}
 	glEnd();
 
-	// glDisable(GL_COLOR_MATERIAL);
+	glDisable(GL_COLOR_MATERIAL);
 	glDisable(GL_DEPTH_TEST);
 }
 void Ground::SetAmbientMaterial(float r, float g, float b, float a) {
