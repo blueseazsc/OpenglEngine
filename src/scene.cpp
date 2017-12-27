@@ -21,10 +21,10 @@ public:
 	{
 		lastTime = currentTime;
 
-		skyBox.Init("/Users/zhangsc/Downloads/final/MyApp/Res/");
+		skyBox.Init("../resources/");
 
-		model.Init("/Users/zhangsc/Downloads/final/MyApp/Res/Sphere.obj");
-		model.mTexture = CreateTexture2DFromBMP("/Users/zhangsc/Downloads/final/MyApp/Res/earth.bmp");
+		model.Init("../resources/Sphere.obj");
+		model.mTexture = CreateTexture2DFromBMP("../resources/earth.bmp");
 		model.SetAmbientMaterial(0.1f, 0.1f, 0.1f, 1.0f);
 		model.SetDiffuseMaterial(0.4f, 0.4f, 0.4f, 1.0f);
 		model.SetSpecularMaterial(1.0f, 1.0f, 1.0f, 1.0f);
@@ -63,7 +63,7 @@ public:
 		camera.mViewportWidth = info.windowWidth;
 		camera.mViewportHeight = info.windowHeight;
 
-		sprite.SetImage("/Users/zhangsc/Downloads/final/MyApp/Res/head.png");
+		sprite.SetImage("../resources/head.png");
 		sprite.SetRect(0.0f, 0.0f, 100.0f, 100.0f);
 
 		particleTexture = CreateProcedureTexture(128);
