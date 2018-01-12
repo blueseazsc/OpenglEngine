@@ -6,7 +6,7 @@
 // Include GLFW
 #include <GLFW/glfw3.h>
 // Include GLM
-#include <glm/glm.hpp>
+// #include <glm/glm.hpp>
 
 #include <stdio.h>
 #include <math.h>
